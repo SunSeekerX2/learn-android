@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Learn-android</string>
+    <string name="LifeCycleTextView">LifeCycleTextView</string>
+
+    <string name="viewmodel_text">0</string>
+    <string name="viewmodel_1">+1</string>
+    <string name="viewmodel_2">+2</string>
+    <string name="thumb_down">thumb_down</string>
+    <string name="thumb_up">thumb_up</string>
+</resources>

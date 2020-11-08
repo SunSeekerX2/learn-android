@@ -7,4 +7,15 @@
     <string name="viewmodel_2">+2</string>
     <string name="thumb_down">thumb_down</string>
     <string name="thumb_up">thumb_up</string>
+    <string name="textview1">Team A</string>
+    <string name="textview2">Team B</string>
+    <string name="scoreA">0</string>
+    <string name="scoreB">0</string>
+    <string name="buttonA1">+1</string>
+    <string name="buttonA2">+2</string>
+    <string name="buttonA3">+3</string>
+    <string name="buttonB1">+1</string>
+    <string name="buttonB2">+2</string>
+    <string name="buttonB3">+3</string>
+    <string name="imageButtonDesc">imageButtonDesc</string>
 </resources>

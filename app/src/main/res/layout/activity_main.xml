@@ -11,33 +11,35 @@
         android:id="@+id/btn_lifecycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LifeCycle" />
+        android:text="Life_Cycle" />
 
     <Button
         android:id="@+id/btn_viewmodel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewModel" />
+        android:text="View_Model" />
 
     <Button
         android:id="@+id/btn_viewmodel_with_livedata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewModelWithLiveData" />
+        android:text="View_Model_With_LiveData" />
 
     <Button
         android:id="@+id/btn_viewmodel_with_databinding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewModelWithDataBinding" />
+        android:text="ViewModel_With_DataBinding" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_demo_score"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Demo_Score" />
 
+    <Button
+        android:id="@+id/btn_sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shared_Preferences" />
 </LinearLayout>

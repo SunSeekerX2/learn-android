@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Learnandroid">
+        <activity android:name=".ui.activity.SharedPreferencesActivity"></activity>
+        <activity android:name=".demo.score.DemoScoreActivity" />
         <activity android:name=".ui.activity.ViewModelActivity" />
-        <activity android:name=".ui.activity.ViewModelWithLiveDataActivity"></activity>
-        <activity android:name=".ui.activity.ViewModelWithDataBindingActivity"></activity>
+        <activity android:name=".ui.activity.ViewModelWithLiveDataActivity" />
+        <activity android:name=".ui.activity.ViewModelWithDataBindingActivity" />
         <activity android:name=".ui.activity.LifeCycleActivity" />
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>

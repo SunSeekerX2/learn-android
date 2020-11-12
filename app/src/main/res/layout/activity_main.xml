@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="12sp"
+  tools:context=".ui.activity.MainActivity">
+
+  <Button
+    android:id="@+id/btn_lifecycle"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12sp"
-    tools:context=".ui.activity.MainActivity">
+    android:layout_height="wrap_content"
+    android:text="Life_Cycle"
+    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_lifecycle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Life_Cycle"
-        android:textAllCaps="false" />
+  <Button
+    android:id="@+id/btn_viewmodel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="View_Model"
+    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_viewmodel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View_Model"
-        android:textAllCaps="false" />
+  <Button
+    android:id="@+id/btn_viewmodel_with_livedata"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="View_Model_With_LiveData"
+    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_viewmodel_with_livedata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View_Model_With_LiveData"
-        android:textAllCaps="false" />
+  <Button
+    android:id="@+id/btn_viewmodel_with_databinding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="ViewModel_With_DataBinding"
+    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_viewmodel_with_databinding"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ViewModel_With_DataBinding"
-        android:textAllCaps="false" />
+  <Button
+    android:id="@+id/btn_demo_score"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Demo_Score"
+    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_demo_score"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Demo_Score"
-        android:textAllCaps="false" />
+  <Button
+    android:id="@+id/btn_sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Shared_Preferences"
+    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Shared_Preferences"
-        android:textAllCaps="false" />
+  <Button
+    android:id="@+id/btn_demo_calc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Demo_Calc"
+    android:textAllCaps="false" />
 </LinearLayout>

@@ -12,7 +12,7 @@ import androidx.lifecycle.SavedStateHandle;
 import java.util.Random;
 
 public class CalcViewModel extends AndroidViewModel {
-    SavedStateHandle handle;
+    private SavedStateHandle handle;
     private static String KEY_HIGH_SCORE = "key_high_score";
     private static String KEY_LEFT_NUMBER = "key_left_number";
     private static String KEY_RIGHT_NUMBER = "key_right_number";
@@ -20,6 +20,7 @@ public class CalcViewModel extends AndroidViewModel {
     private static String KEY_ANSWER = "key_answer";
     private static String KEY_CURRENT_SCORE = "key_current_score";
     private static String SAVE_SHP_DATA_NAME = "save_shp_data_name";
+    boolean win_flag = false;
 
     public CalcViewModel(@NonNull Application application, SavedStateHandle handle) {
         super(application);
@@ -35,31 +36,31 @@ public class CalcViewModel extends AndroidViewModel {
         this.handle = handle;
     }
 
-    MutableLiveData<Integer> getLeftNumber() {
+    public MutableLiveData<Integer> getLeftNumber() {
         return handle.getLiveData(KEY_LEFT_NUMBER);
     }
 
-    MutableLiveData<Integer> getRightNumber() {
+    public MutableLiveData<Integer> getRightNumber() {
         return handle.getLiveData(KEY_RIGHT_NUMBER);
     }
 
-    MutableLiveData<String> getOperator() {
+    public MutableLiveData<String> getOperator() {
         return handle.getLiveData(KEY_OPERATOR);
     }
 
-    MutableLiveData<Integer> getHighScore() {
+    public MutableLiveData<Integer> getHighScore() {
         return handle.getLiveData(KEY_HIGH_SCORE);
     }
 
-    MutableLiveData<Integer> getCurrentScore() {
+    public MutableLiveData<Integer> getCurrentScore() {
         return handle.getLiveData(KEY_CURRENT_SCORE);
     }
 
-    MutableLiveData<Integer> getAnswer() {
+    public MutableLiveData<Integer> getAnswer() {
         return handle.getLiveData(KEY_ANSWER);
     }
 
-    void generator() {
+    public void generator() {
         int LEVEL = 20;
         Random random = new Random();
         int x, y;
@@ -92,10 +93,20 @@ public class CalcViewModel extends AndroidViewModel {
     }
 
     @SuppressWarnings("ConstantConditions")
-    void save() {
+    public void save() {
         SharedPreferences shp = getApplication().getSharedPreferences(SAVE_SHP_DATA_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = shp.edit();
         editor.putInt(KEY_HIGH_SCORE, getHighScore().getValue());
         editor.apply();
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void answerCurrent(){
+        getCurrentScore().setValue(getCurrentScore().getValue() + 1);
+        if(getCurrentScore().getValue() > getHighScore().getValue()){
+            getHighScore().setValue(getCurrentScore().getValue());
+            win_flag = true;
+        }
+        generator();
     }
 }

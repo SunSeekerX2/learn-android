@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import cn.yoouu.learn.R;
+import cn.yoouu.learn.demo.calculation.CalculationActivity;
 import cn.yoouu.learn.demo.score.DemoScoreActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnViewModelWithDataBinding;
     Button mBtnDemoScore;
     Button mBtnSharedPreferences;
+    Button mBtnDemoCalc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnViewModelWithDataBinding = findViewById(R.id.btn_viewmodel_with_databinding);
         mBtnDemoScore = findViewById(R.id.btn_demo_score);
         mBtnSharedPreferences = findViewById(R.id.btn_sp);
+        mBtnDemoCalc = findViewById(R.id.btn_demo_calc);
 
         // 去生命周期页面
         mBtnLifeCycle.setOnClickListener((View v) -> {
@@ -53,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         });
         mBtnSharedPreferences.setOnClickListener((View v) -> {
             Intent intent = new Intent(MainActivity.this, SharedPreferencesActivity.class);
+            startActivity(intent);
+        });
+        mBtnDemoCalc.setOnClickListener((View v) -> {
+            Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
             startActivity(intent);
         });
     }

@@ -23,6 +23,13 @@
           app:layout_constraintGuide_percent="0.1" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
           android:id="@+id/guideline14"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -161,7 +168,7 @@
           app:layout_constraintVertical_bias="0.492" />
 
         <TextView
-          android:id="@+id/textView15"
+          android:id="@+id/calc_tv_ans"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="@string/calc_input_indicator"
@@ -316,5 +323,16 @@
           app:layout_constraintHorizontal_bias="0.5"
           app:layout_constraintStart_toEndOf="@+id/calc_button0"
           app:layout_constraintTop_toTopOf="@+id/calc_button0" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/calc_high_score_message(data.highScore)}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline29"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline29"
+            tools:text="High Score:999" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

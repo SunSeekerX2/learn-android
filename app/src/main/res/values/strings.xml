@@ -38,11 +38,15 @@
     <string name="calc_symbol_plus">+</string>
     <string name="calc_symbol_equal">=</string>
     <string name="calc_symbol_quest_mark">\?</string>
-    <string name="calc_current_score">Score:d%</string>
+    <string name="calc_current_score">Score:%d</string>
     <string name="calc_input_indicator">Your Answer:</string>
     <string name="calc_lose_message">Your Lose!</string>
     <string name="calc_win_message">Your Win!</string>
-    <string name="calc_lose_score_message">Your Score:d%</string>
-    <string name="calc_win_score_message">New Score:d%</string>
+    <string name="calc_lose_score_message">Your Score:%d</string>
+    <string name="calc_win_score_message">New Score:%d</string>
     <string name="calc_button_to_title">Back</string>
+    <string name="calc_answer_corrent_message">Correct, Go on!</string>
+    <string name="calc_dialog_quit_title">Are your sure to quit?</string>
+    <string name="calc_dialog_positive_msg">OK</string>
+    <string name="calc_dialog_negative_msg">Cancel</string>
 </resources>

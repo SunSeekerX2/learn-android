@@ -20,7 +20,7 @@ public class CalcViewModel extends AndroidViewModel {
     private static String KEY_ANSWER = "key_answer";
     private static String KEY_CURRENT_SCORE = "key_current_score";
     private static String SAVE_SHP_DATA_NAME = "save_shp_data_name";
-    boolean win_flag = false;
+    public boolean win_flag = false;
 
     public CalcViewModel(@NonNull Application application, SavedStateHandle handle) {
         super(application);
@@ -72,11 +72,11 @@ public class CalcViewModel extends AndroidViewModel {
             if (x > y) {
                 getAnswer().setValue(x);
                 getLeftNumber().setValue(y);
-                getRightNumber().setValue(x);
+                getRightNumber().setValue(x - y);
             } else {
                 getAnswer().setValue(y);
                 getLeftNumber().setValue(x);
-                getRightNumber().setValue(y);
+                getRightNumber().setValue(y - x);
             }
         } else {
             getOperator().setValue("-");
@@ -101,7 +101,7 @@ public class CalcViewModel extends AndroidViewModel {
     }
 
     @SuppressWarnings("ConstantConditions")
-    public void answerCurrent(){
+    public void answerCorrect(){
         getCurrentScore().setValue(getCurrentScore().getValue() + 1);
         if(getCurrentScore().getValue() > getHighScore().getValue()){
             getHighScore().setValue(getCurrentScore().getValue());

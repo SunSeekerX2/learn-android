@@ -11,6 +11,7 @@ import android.widget.Button;
 import cn.yoouu.learn.R;
 import cn.yoouu.learn.demo.calculation.CalculationActivity;
 import cn.yoouu.learn.demo.score.DemoScoreActivity;
+import cn.yoouu.learn.demo.words.DemoWordsActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button mBtnLifeCycle;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnDemoScore;
     Button mBtnSharedPreferences;
     Button mBtnDemoCalc;
+    Button mBtnDemoWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnDemoScore = findViewById(R.id.btn_demo_score);
         mBtnSharedPreferences = findViewById(R.id.btn_sp);
         mBtnDemoCalc = findViewById(R.id.btn_demo_calc);
+        mBtnDemoWords = findViewById(R.id.btn_demo_words);
 
         // 去生命周期页面
         mBtnLifeCycle.setOnClickListener((View v) -> {
@@ -61,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
         });
         mBtnDemoCalc.setOnClickListener((View v) -> {
             Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
+            startActivity(intent);
+        });
+        mBtnDemoWords.setOnClickListener((View v) -> {
+            Intent intent = new Intent(MainActivity.this, DemoWordsActivity.class);
             startActivity(intent);
         });
     }

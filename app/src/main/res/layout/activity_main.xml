@@ -56,4 +56,11 @@
     android:layout_height="wrap_content"
     android:text="Demo_Calc"
     android:textAllCaps="false" />
+
+  <Button
+      android:id="@+id/btn_demo_words"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Demo_Words"
+      android:textAllCaps="false" />
 </LinearLayout>

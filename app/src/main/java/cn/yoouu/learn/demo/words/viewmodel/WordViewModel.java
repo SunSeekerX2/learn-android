@@ -42,4 +42,8 @@ public class WordViewModel extends AndroidViewModel {
     public void deleteAllWords() {
         repository.deleteAllWords();
     }
+
+    public LiveData<List<Word>> findWordsWithPattern(String pattern) {
+        return repository.findWordsWithPattern(pattern);
+    }
 }

@@ -13,22 +13,26 @@ import cn.yoouu.learn.demo.words.entity.Word;
 
 @Dao
 public interface WordDao {
-    @Insert
-    void insertWords(Word...words);
+  @Insert
+  void insertWords(Word... words);
 
-    @Update
-    void updateWords(Word...words);
+  @Update
+  void updateWords(Word... words);
 
-    @Delete
-    void deleteWords(Word...words);
+  @Delete
+  void deleteWords(Word... words);
 
-    @Query("DELETE FROM WORD")
-    void deleteAllWords();
+  @Query("DELETE FROM WORD")
+  void deleteAllWords();
 
-    /**
-     * 返回liveData 系统自动放在子线程执行
-     * @return
-     */
-    @Query("SELECT * FROM WORD ORDER BY id DESC")
-    LiveData<List<Word>> getAllWords();
+  /**
+   * 返回liveData 系统自动放在子线程执行
+   *
+   * @return
+   */
+  @Query("SELECT * FROM WORD ORDER BY id DESC")
+  LiveData<List<Word>> getAllWords();
+
+  @Query("SELECT * FROM WORD WHERE english_word LIKE :pattren ORDER BY id DESC")
+  LiveData<List<Word>> findWordsWithPattern(String pattren);
 }

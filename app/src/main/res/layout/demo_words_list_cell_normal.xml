@@ -4,68 +4,109 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/demo_words_list_cell_normal"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:background="?attr/selectableItemBackground"
+  android:layout_height="60dp"
+  android:background="@color/white"
   android:clickable="true">
-
-    <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/guideline31"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
       android:id="@+id/guideline32"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
-      app:layout_constraintGuide_percent="0.85" />
+      app:layout_constraintGuide_percent="0.8" />
 
-    <TextView
-      android:id="@+id/textViewNumber"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="TextView"
-      android:textAlignment="viewStart"
+    <View
+      android:id="@+id/divider3"
+      android:layout_width="2dp"
+      android:layout_height="match_parent"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="8dp"
+      android:background="?android:attr/listDivider"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@+id/guideline31"
-      app:layout_constraintHorizontal_bias="0.484"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      tools:text="1" />
-
-    <TextView
-      android:id="@+id/textViewEnglish"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="8dp"
-      android:text="TextView"
-      android:textAlignment="viewStart"
-      android:textSize="24sp"
-      app:layout_constraintBottom_toTopOf="@+id/textViewChinese"
       app:layout_constraintEnd_toStartOf="@+id/guideline32"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="@+id/guideline31"
+      app:layout_constraintStart_toStartOf="@+id/guideline32"
       app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-      android:id="@+id/textViewChinese"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:text="TextView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:background="?attr/selectableItemBackground"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/textViewEnglish"
-      app:layout_constraintTop_toBottomOf="@+id/textViewEnglish" />
+      app:layout_constraintEnd_toStartOf="@+id/guideline32"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0">
 
-    <ImageView
-      android:id="@+id/imageView4"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+        <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline31"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent="0.1" />
+
+        <TextView
+          android:id="@+id/textViewNumber"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="TextView"
+          android:textAlignment="viewStart"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toStartOf="@+id/guideline31"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:text="1" />
+
+        <TextView
+          android:id="@+id/textViewEnglish"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:text="TextView"
+          android:textAlignment="viewStart"
+          android:textSize="24sp"
+          app:layout_constraintBottom_toTopOf="@+id/textViewChinese"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="@+id/guideline31"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:id="@+id/textViewChinese"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:text="TextView"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/textViewEnglish"
+          app:layout_constraintTop_toBottomOf="@+id/textViewEnglish" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout2"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="?attr/selectableItemBackground"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="@+id/guideline32"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+      app:layout_constraintVertical_bias="0.0">
+
+        <Switch
+          android:id="@+id/switchChineseInvisible"
+          android:layout_width="wrap_content"
+          android:layout_height="0dp"
+          android:paddingStart="30dp"
+          android:paddingEnd="10dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

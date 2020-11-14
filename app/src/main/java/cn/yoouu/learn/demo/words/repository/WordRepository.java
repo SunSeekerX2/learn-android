@@ -12,88 +12,92 @@ import cn.yoouu.learn.demo.words.dao.WordDao;
 import cn.yoouu.learn.demo.words.entity.Word;
 
 public class WordRepository {
-    private final LiveData<List<Word>> allWords;
+  private final LiveData<List<Word>> allWords;
+  private final WordDao wordDao;
+
+  public WordRepository(Context context) {
+    WordDatabase wordDatabase = WordDatabase.getDataBase(context.getApplicationContext());
+    wordDao = wordDatabase.getWordDao();
+    allWords = wordDao.getAllWords();
+  }
+
+  public LiveData<List<Word>> getAllWords() {
+    return allWords;
+  }
+
+  public void insertWords(Word... words) {
+    new InsertAsyncTask(wordDao).execute(words);
+  }
+
+  public void updateWords(Word... words) {
+    new UpdatetAsyncTask(wordDao).execute(words);
+  }
+
+  public void deleteWords(Word... words) {
+    new DeletetAsyncTask(wordDao).execute(words);
+  }
+
+  public void deleteAllWords() {
+    new DeletetAllAsyncTask(wordDao).execute();
+  }
+
+  public LiveData<List<Word>> findWordsWithPattern(String pattern) {
+    return wordDao.findWordsWithPattern("%" + pattern + "%");
+  }
+
+  static class InsertAsyncTask extends AsyncTask<Word, Void, Void> {
     private final WordDao wordDao;
 
-    public WordRepository(Context context) {
-        WordDatabase wordDatabase = WordDatabase.getDataBase(context.getApplicationContext());
-        wordDao = wordDatabase.getWordDao();
-        allWords = wordDao.getAllWords();
+    public InsertAsyncTask(WordDao wordDao) {
+      this.wordDao = wordDao;
     }
 
-    public LiveData<List<Word>> getAllWords() {
-        return allWords;
+    @Override
+    protected Void doInBackground(Word... words) {
+      wordDao.insertWords(words);
+      return null;
+    }
+  }
+
+  static class UpdatetAsyncTask extends AsyncTask<Word, Void, Void> {
+    private final WordDao wordDao;
+
+    public UpdatetAsyncTask(WordDao wordDao) {
+      this.wordDao = wordDao;
     }
 
-    public void insertWords(Word... words) {
-        new InsertAsyncTask(wordDao).execute(words);
+    @Override
+    protected Void doInBackground(Word... words) {
+      wordDao.updateWords(words);
+      return null;
+    }
+  }
+
+  static class DeletetAsyncTask extends AsyncTask<Word, Void, Void> {
+    private final WordDao wordDao;
+
+    public DeletetAsyncTask(WordDao wordDao) {
+      this.wordDao = wordDao;
     }
 
-    public void updateWords(Word... words) {
-        new UpdatetAsyncTask(wordDao).execute(words);
+    @Override
+    protected Void doInBackground(Word... words) {
+      wordDao.deleteWords(words);
+      return null;
+    }
+  }
+
+  static class DeletetAllAsyncTask extends AsyncTask<Word, Void, Void> {
+    private final WordDao wordDao;
+
+    public DeletetAllAsyncTask(WordDao wordDao) {
+      this.wordDao = wordDao;
     }
 
-    public void deleteWords(Word... words) {
-        new DeletetAsyncTask(wordDao).execute(words);
+    @Override
+    protected Void doInBackground(Word... words) {
+      wordDao.deleteAllWords();
+      return null;
     }
-
-    public void deleteAllWords() {
-        new DeletetAllAsyncTask(wordDao).execute();
-    }
-
-    static class InsertAsyncTask extends AsyncTask<Word, Void, Void> {
-        private final WordDao wordDao;
-
-        public InsertAsyncTask(WordDao wordDao) {
-            this.wordDao = wordDao;
-        }
-
-        @Override
-        protected Void doInBackground(Word... words) {
-            wordDao.insertWords(words);
-            return null;
-        }
-    }
-
-    static class UpdatetAsyncTask extends AsyncTask<Word, Void, Void> {
-        private final WordDao wordDao;
-
-        public UpdatetAsyncTask(WordDao wordDao) {
-            this.wordDao = wordDao;
-        }
-
-        @Override
-        protected Void doInBackground(Word... words) {
-            wordDao.updateWords(words);
-            return null;
-        }
-    }
-
-    static class DeletetAsyncTask extends AsyncTask<Word, Void, Void> {
-        private final WordDao wordDao;
-
-        public DeletetAsyncTask(WordDao wordDao) {
-            this.wordDao = wordDao;
-        }
-
-        @Override
-        protected Void doInBackground(Word... words) {
-            wordDao.deleteWords(words);
-            return null;
-        }
-    }
-
-    static class DeletetAllAsyncTask extends AsyncTask<Word, Void, Void> {
-        private final WordDao wordDao;
-
-        public DeletetAllAsyncTask(WordDao wordDao) {
-            this.wordDao = wordDao;
-        }
-
-        @Override
-        protected Void doInBackground(Word... words) {
-            wordDao.deleteAllWords();
-            return null;
-        }
-    }
+  }
 }

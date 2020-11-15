@@ -9,7 +9,14 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Learnandroid">
-<!--  android:windowSoftInputMode="adjustNothing" 添加键盘升起不会自动压缩页面  -->
+    <activity
+      android:name=".demo.serializable.DemoParcelableActivity"
+      android:process=":processDemoParcelableActivity">
+
+    </activity>
+    <activity android:name=".demo.serializable.DemoSerializableActivity" />
+    <activity android:name=".demo.paging.DempPagingActivity" />
+    <activity android:name=".demo.bottom_navigation.DemoBottomNavigationActivity" /> <!-- android:windowSoftInputMode="adjustNothing" 添加键盘升起不会自动压缩页面 -->
     <activity
       android:name=".demo.words.DemoWordsActivity"
       android:windowSoftInputMode="adjustNothing" />

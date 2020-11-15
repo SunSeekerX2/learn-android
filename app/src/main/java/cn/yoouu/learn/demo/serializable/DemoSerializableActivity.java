@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,8 +20,8 @@ import cn.yoouu.learn.R;
 
 public class DemoSerializableActivity extends AppCompatActivity {
   EditText editTextName, editTextAge, editTextMath, editTextEnglish, editTextChinese;
-  Button mBtnSave, mBtnLoad, mBtnParcelable;
-  TextView textViewGrade;
+  Button mBtnSave, mBtnLoad, mBtnParcelable,mBtnGson;
+  TextView textViewGrade, textViewGson;
   private final String FILE_NAME = "my_data";
 
   @Override
@@ -35,7 +36,9 @@ public class DemoSerializableActivity extends AppCompatActivity {
     mBtnSave = findViewById(R.id.demoSerializableButtonSave);
     mBtnLoad = findViewById(R.id.demoSerializableButtonLoad);
     mBtnParcelable = findViewById(R.id.demoSerializableButtonParcelable);
+    mBtnGson = findViewById(R.id.demoSerializableButtonGson);
     textViewGrade = findViewById(R.id.demoSerializableTextViewGrade);
+    textViewGson = findViewById(R.id.demoSerializableTextViewGson);
 
     mBtnSave.setOnClickListener((View v) -> {
       int math = Integer.parseInt(editTextMath.getText().toString().trim());
@@ -101,6 +104,22 @@ public class DemoSerializableActivity extends AppCompatActivity {
       bundle.putParcelable("student", student);
       intent.putExtra("student_bundle", bundle);
       startActivity(intent);
+    });
+
+    /**
+     * 使用 Gson
+     */
+    mBtnGson.setOnClickListener((View view) -> {
+      String name = editTextName.getText().toString().trim();
+      int age = Integer.parseInt(editTextAge.getText().toString().trim());
+
+      int math = Integer.parseInt(editTextMath.getText().toString().trim());
+      int english = Integer.parseInt(editTextEnglish.getText().toString().trim());
+      int chinese = Integer.parseInt(editTextChinese.getText().toString().trim());
+      StudentUsingPrcelable student = new StudentUsingPrcelable(name, age, new ScoreUsingParcelable(math, english, chinese));
+      Gson gson = new Gson();
+      String jsonStudent = gson.toJson(student);
+      textViewGson.setText(jsonStudent);
     });
   }
 }

@@ -96,5 +96,13 @@
       android:text="Demo_Serializable"
       android:textAllCaps="false" />
 
+    <Button
+      android:id="@+id/btnDemoGallery"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Demo_Gallery"
+      android:textAllCaps="false" />
+    />
+
   </LinearLayout>
 </ScrollView>

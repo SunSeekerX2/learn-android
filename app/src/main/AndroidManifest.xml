@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="cn.yoouu.learn">
 
+  <uses-permission android:name="android.permission.INTERNET" />
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -9,11 +11,10 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Learnandroid">
+    <activity android:name=".demo.gallery.DemoGalleryActivity"></activity>
     <activity
       android:name=".demo.serializable.DemoParcelableActivity"
-      android:process=":processDemoParcelableActivity">
-
-    </activity>
+      android:process=":processDemoParcelableActivity"></activity>
     <activity android:name=".demo.serializable.DemoSerializableActivity" />
     <activity android:name=".demo.paging.DempPagingActivity" />
     <activity android:name=".demo.bottom_navigation.DemoBottomNavigationActivity" /> <!-- android:windowSoftInputMode="adjustNothing" 添加键盘升起不会自动压缩页面 -->

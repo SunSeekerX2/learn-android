@@ -133,15 +133,25 @@
     android:textAllCaps="false"/>
 
   <Button
-    android:id="@+id/button8"
+    android:id="@+id/demoSerializableButtonGson"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:text="Button"
+    android:text="Gson"
+    android:textAllCaps="false"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toStartOf="@+id/guideline34"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="@+id/guideline33"
     app:layout_constraintTop_toBottomOf="@+id/demoSerializableButtonParcelable"
-    app:layout_constraintVertical_bias="0.058"
-    android:textAllCaps="false"/>
+    app:layout_constraintVertical_bias="0.058" />
+
+  <TextView
+    android:id="@+id/demoSerializableTextViewGson"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Waiting for gson stringify..."
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/guideline34"
+    app:layout_constraintStart_toStartOf="@+id/guideline33"
+    app:layout_constraintTop_toBottomOf="@+id/demoSerializableButtonGson" />
 </androidx.constraintlayout.widget.ConstraintLayout>

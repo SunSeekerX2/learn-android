@@ -11,6 +11,7 @@ import android.widget.Button;
 import cn.yoouu.learn.R;
 import cn.yoouu.learn.demo.bottom_navigation.DemoBottomNavigationActivity;
 import cn.yoouu.learn.demo.calculation.CalculationActivity;
+import cn.yoouu.learn.demo.gallery.DemoGalleryActivity;
 import cn.yoouu.learn.demo.paging.DempPagingActivity;
 import cn.yoouu.learn.demo.score.DemoScoreActivity;
 import cn.yoouu.learn.demo.serializable.DemoSerializableActivity;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
   Button mBtnDemoButtonNavigation;
   Button mBtnDemoPaging;
   Button mBtnDemoSerializable;
+  Button mBtnDemoGallery;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     mBtnDemoButtonNavigation = findViewById(R.id.btnDemoButtonNavigation);
     mBtnDemoPaging = findViewById(R.id.btnDemoPaging);
     mBtnDemoSerializable = findViewById(R.id.btnDemoSerializable);
+    mBtnDemoGallery = findViewById(R.id.btnDemoGallery);
 
     // 去生命周期页面
     mBtnLifeCycle.setOnClickListener((View v) -> {
@@ -89,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
     });
     mBtnDemoSerializable.setOnClickListener((View v) -> {
       Intent intent = new Intent(MainActivity.this, DemoSerializableActivity.class);
+      startActivity(intent);
+    });
+    mBtnDemoGallery.setOnClickListener((View v) -> {
+      Intent intent = new Intent(MainActivity.this, DemoGalleryActivity.class);
       startActivity(intent);
     });
   }

@@ -15,10 +15,18 @@
       app:destination="@id/photoFragment"
       app:enterAnim="@anim/nav_default_pop_enter_anim"
       app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+      android:id="@+id/action_galleryFragment_to_photoPagerFragment"
+      app:destination="@id/photoPagerFragment" />
   </fragment>
   <fragment
     android:id="@+id/photoFragment"
     android:name="cn.yoouu.learn.demo.gallery.fragment.PhotoFragment"
     android:label="Photo"
     tools:layout="@layout/photo_fragment" />
+  <fragment
+    android:id="@+id/photoPagerFragment"
+    android:name="cn.yoouu.learn.demo.gallery.fragment.PhotoPagerFragment"
+    android:label="photo_pager_fragment"
+    tools:layout="@layout/photo_pager_fragment" />
 </navigation>

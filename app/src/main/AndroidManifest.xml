@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   package="cn.yoouu.learn">
 
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission
+    android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    tools:ignore="ScopedStorage" />
 
   <application
     android:allowBackup="true"
@@ -11,10 +15,10 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Learnandroid">
-    <activity android:name=".demo.gallery.DemoGalleryActivity"></activity>
+    <activity android:name=".demo.gallery.DemoGalleryActivity" />
     <activity
       android:name=".demo.serializable.DemoParcelableActivity"
-      android:process=":processDemoParcelableActivity"></activity>
+      android:process=":processDemoParcelableActivity" />
     <activity android:name=".demo.serializable.DemoSerializableActivity" />
     <activity android:name=".demo.paging.DempPagingActivity" />
     <activity android:name=".demo.bottom_navigation.DemoBottomNavigationActivity" /> <!-- android:windowSoftInputMode="adjustNothing" 添加键盘升起不会自动压缩页面 -->

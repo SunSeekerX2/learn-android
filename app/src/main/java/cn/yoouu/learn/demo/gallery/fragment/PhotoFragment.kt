@@ -18,9 +18,9 @@ import kotlinx.android.synthetic.main.photo_fragment.*
 
 class PhotoFragment : Fragment() {
 
-  companion object {
-    fun newInstance() = PhotoFragment()
-  }
+//  companion object {
+//    fun newInstance() = PhotoFragment()
+//  }
 
   private lateinit var viewModel: PhotoViewModel
 

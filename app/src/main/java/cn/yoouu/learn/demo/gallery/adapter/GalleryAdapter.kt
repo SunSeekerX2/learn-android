@@ -81,8 +81,6 @@ class GalleryAdapter : ListAdapter<PhotoItem, MyViewHolder>(DIFFCALLBACK) {
             return oldItem.photoId == newItem.photoId
         }
     }
-
-
 }
 
 class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
